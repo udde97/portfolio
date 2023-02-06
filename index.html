@@ -7,7 +7,10 @@
     <title>Mahamud Abukar</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/61951e34d2.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
   </head>
+  
 
   <body>
 <!-- Här nedan har jag lagt till en dark layer som färgar bakgrundsbilden till en mörkare shade, see på css hur jag gjorde-->
@@ -23,26 +26,30 @@
             <a href="#aboutMe" class="nav-link-aboutMe">About me</a>
             <a href="#projects" class="nav-link-project">Projects</a></li>
             <a href="#contact" class="nav-link-Contact">Contact</a>
-
+<button id="toggleTheme">Light Mode</button>
         </ul>
     </nav>
     
+    
     </div>
+    
    
                     <!--Här har jag gjort en Card där jag lagt in en bild på mig själv , mitt namn och vad jag pluggar, längst ner har jag inkluderat iconer med en href tag som tar mig till min facebook , github osv. -->
       <div class="container">
         <div class="card">
           <div class="card-image">
-            <img src="images/profile.jpg" class="card-image" />
+               <!-- Här har jag lagt tilll alternativ text så att folk som använder skärmläsar program kan med hjälp av deras program höra vad bilden de pekar på är för något, 
+               Detta faller under WCAG 2.0 Guideline 1.1.1 "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose."-->
+            <img src="images/profile.jpg" class="card-image" alt="Profile picture"/>
           </div>
-
+           
           <div class="card-content">
             <h2 class="name">MAHAMUD ABUKAR</h2>
             <p class="description">UX designer student & Mobile app developer </p>
-            <a href ="https://www.linkedin.com/in/mahamud-abukar-13737a203/"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href ="https://www.facebook.com/Ud.abukar/">  <i class="fa-brands fa-facebook-f"></i> </a>
-            <a href ="https://twitter.com/search?q=iPhone&src=trend_click&vertical=trends"> <i class="fa-brands fa-twitter"></i> </a>
-             <a href ="https://github.com/udde97"> <i class="fa-brands fa-github"></i></i> </a>
+            <a href ="https://www.linkedin.com/in/mahamud-abukar-13737a203/" alt="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href ="https://www.facebook.com/Ud.abukar/" alt="Facebook">  <i class="fa-brands fa-facebook-f"></i> </a>
+            <a href ="https://twitter.com/search?q=iPhone&src=trend_click&vertical=trends" alt="twitter"> <i class="fa-brands fa-twitter"></i> </a>
+             <a href ="https://github.com/udde97" alt="Github"> <i class="fa-brands fa-github"></i></i> </a>
             </div>
          
         </div>
@@ -82,15 +89,19 @@ important resource for your team.</p>
          </div>
        </section>
 
-                      <!-- Här har jag gjort en kontakt sektion där man eventuellt ska kunna meddela och kontakta mig, just nu är den byggd på html och css och funkar inte helt direkt än, jag planerar på att lägga till javascript kod för att den ska funka-->
+                      <!-- Här har jag gjort en kontakt sektion där jag även lagt till autocomplete på inputs så att webbläsaren föreslår inmating
+                      detta är bra för personer med kognitiva och motoriska funktionsnedsättningar, detta faller under WCAG's kritium 
+                       1.3.5 (AA)	Märk upp vanliga formulärfält i koden-->
        <section id="contact">
         <h1>Contact</h1>
         <form action="" class="form">
-          <input type="text" name="name" class="input" placeholder="Enter Your Name">
-          <input type="email" name="email" class="input" placeholder="Enter Your Email">
+          <input id="fname" type="text" name="name" class="input" placeholder="Enter Your Name" autocomplete="on">
+          <input id="email" type="email" name="email" class="input" placeholder="Enter Your Email" autocomplete="on">
           <textarea name="message" id="message" cols="70" rows="20" placeholder="Enter Your Message"></textarea>
-          <input type="submit" value="Submit" id="submit">
+          <input type="submit" value="submit" id="submit">
         </form>
+
+        
 
 
        </section>
@@ -108,5 +119,6 @@ important resource for your team.</p>
     
    
     </div> 
+    <script src="app.js"></script>
   </body>
 </html>
