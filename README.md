@@ -1,1 +1,1 @@
-https://udde97.github.io/Portfolio-23/
+https://udde97.github.io/portfolio/
